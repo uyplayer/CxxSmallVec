@@ -10,8 +10,7 @@ project(CxxSmallVec
 
 
 file(GLOB_RECURSE CXXSMALLVEC_HEADERS
-        include/*.h
-        include/*.hpp
+        src
 )
 
 file(GLOB_RECURSE CXXSMALLVEC_SOURCES
