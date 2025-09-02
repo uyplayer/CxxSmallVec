@@ -4,7 +4,7 @@ project(CxxSmallVec
         VERSION 0.1.0
         DESCRIPTION "A lightweight, modern C++ alternative to Boost.Container’s `small_vector` — **faster, lighter, and more flexible.**"
         HOMEPAGE_URL "https://github.com/uyplayer/CxxSmallVec"
-        LANGUAGES CXX
+        LANGUAGES CXX C
 )
 
 

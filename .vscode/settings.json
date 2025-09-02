@@ -1,0 +1,7 @@
+{
+    "cmake.generator": "Ninja", // 或 "Unix Makefiles"，看你本地习惯
+    "cmake.default.buildDirectory": "${workspaceFolder}/build",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.intelliSenseEngineFallback": "Disabled"
+}
