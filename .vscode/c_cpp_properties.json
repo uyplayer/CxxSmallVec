@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+            "${workspaceFolder}/**",
+            "/home/uyplayer/.conan2/p/**/include"],
+            "defines": [],
+            "intelliSenseMode": "linux-clang-x64",
+            "configurationProvider": "vector-of-bool.cmake-tools"
+        }
+    ],
+    "version": 4
+}
