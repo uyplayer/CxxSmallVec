@@ -29,7 +29,7 @@
       "command": "cmake",
       "args": [
         "--build", "--preset", "conan-debug",
-        "--target", "install"
+        // "--target", "install"
       ],
       "problemMatcher": []
     }
