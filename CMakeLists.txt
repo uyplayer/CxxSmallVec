@@ -31,3 +31,6 @@ target_include_directories(CxxSmallVec
         $<INSTALL_INTERFACE:include>
 )
 
+
+# CMake 会在 build/ 目录生成 compile_commands.json。
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

@@ -3,5 +3,7 @@
     "cmake.default.buildDirectory": "${workspaceFolder}/build",
     "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "C_Cpp.intelliSenseEngine": "default",
-    "C_Cpp.intelliSenseEngineFallback": "Disabled"
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+
 }
