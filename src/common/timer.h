@@ -10,14 +10,14 @@
 #include "common/logger.h"
 
 /**
- * @brief 执行时间计算日记
+ * @brief 执行时间计算日记，作用域内有效
  */
-class ExTimer {
+class ExecuteTimer {
 public:
-    explicit ExTimer(std::string  name = "")
+    explicit ExecuteTimer(std::string  name = "")
         : name_(std::move(name)), start_(Clock::now()) {}
 
-    ~ExTimer() {
+    ~ExecuteTimer() {
         const auto end = Clock::now();
         const std::chrono::duration<double> elapsed = end - start_;
 

@@ -10,6 +10,10 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 
+/**
+ * @brief 日志初始化
+ * 
+ */
 inline void logger_init() {
     try {
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
