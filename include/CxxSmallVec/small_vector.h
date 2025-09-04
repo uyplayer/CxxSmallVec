@@ -6,7 +6,7 @@
 #include <cstddef>
 #include <stdexcept>
 #include <type_traits>
-#include <pybind11/pybind11.h>
+ 
 
 
 namespace cxxsmallvec
