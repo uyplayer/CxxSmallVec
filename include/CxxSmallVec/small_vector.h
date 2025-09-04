@@ -6,6 +6,8 @@
 #include <cstddef>
 #include <stdexcept>
 #include <type_traits>
+#include <pybind11/pybind11.h>
+
 
 namespace cxxsmallvec
 {
@@ -20,7 +22,7 @@ namespace cxxsmallvec
      * @tparam Alloc 分配器类型，如果不传用默认分配器
      */
     template <typename T, std::size_t N, typename Alloc = std::allocator<T>>
-    class small_vector
+    class SmalVector
     {
     public:
         // 定义类型

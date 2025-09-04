@@ -16,6 +16,8 @@ class CxxSmallVec(ConanFile):
  
     def requirements(self):
         self.requires("spdlog/1.15.1")
+ 
+        
 
  
     def layout(self):

@@ -1,87 +1,54 @@
 {
-    "cmake.buildDirectory": "${workspaceRoot}/build/",
+    // ==================== CMake 配置 ====================
+    "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
     "cmake.buildArgs": [
         "--parallel"
     ],
-    "cmake.configureOnOpen": false,
+    "cmake.configureOnOpen": true,
     "cmake.autoRestartBuild": true,
-    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
-    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "cmake.configureArgs": [
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+    ],
+
+    // ==================== C/C++ 配置 ====================
+    "C_Cpp.autocomplete": "default", // ✅ 启用智能补全
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools", // ✅ 推荐配置提供程序
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/${buildType}/compile_commands.json", // ✅ 动态路径
+    "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.suggestSnippets": true,
+    "C_Cpp.parameterHints": true,
     "C_Cpp.workspaceParsingPriority": "medium",
+
+    // ==================== 语言配置 ====================
+    "[cpp]": {
+        "editor.wordBasedSuggestions": "allDocuments"
+    },
+    "[c]": {
+        "editor.wordBasedSuggestions": "allDocuments"
+    },
+
+    // ==================== 文件关联 ====================
     "files.associations": {
         "*.py": "python",
         "*.cpp": "cpp",
-        "string": "cpp",
-        "array": "cpp",
-        "atomic": "cpp",
-        "bit": "cpp",
-        "cctype": "cpp",
-        "charconv": "cpp",
-        "chrono": "cpp",
-        "clocale": "cpp",
-        "cmath": "cpp",
-        "compare": "cpp",
-        "complex": "cpp",
-        "concepts": "cpp",
-        "condition_variable": "cpp",
-        "cstdarg": "cpp",
-        "cstddef": "cpp",
-        "cstdint": "cpp",
-        "cstdio": "cpp",
-        "cstdlib": "cpp",
-        "cstring": "cpp",
-        "ctime": "cpp",
-        "cwchar": "cpp",
-        "cwctype": "cpp",
-        "deque": "cpp",
-        "forward_list": "cpp",
-        "list": "cpp",
-        "map": "cpp",
-        "set": "cpp",
-        "unordered_map": "cpp",
-        "unordered_set": "cpp",
-        "vector": "cpp",
-        "exception": "cpp",
-        "algorithm": "cpp",
-        "functional": "cpp",
-        "iterator": "cpp",
-        "memory": "cpp",
-        "memory_resource": "cpp",
-        "numeric": "cpp",
-        "optional": "cpp",
-        "random": "cpp",
-        "ratio": "cpp",
-        "string_view": "cpp",
-        "system_error": "cpp",
-        "tuple": "cpp",
-        "type_traits": "cpp",
-        "utility": "cpp",
-        "format": "cpp",
-        "fstream": "cpp",
-        "initializer_list": "cpp",
-        "iomanip": "cpp",
-        "iosfwd": "cpp",
-        "iostream": "cpp",
-        "istream": "cpp",
-        "limits": "cpp",
-        "mutex": "cpp",
-        "new": "cpp",
-        "numbers": "cpp",
-        "ostream": "cpp",
-        "semaphore": "cpp",
-        "span": "cpp",
-        "sstream": "cpp",
+        "*.h": "cpp",
         "stdexcept": "cpp",
-        "stop_token": "cpp",
-        "streambuf": "cpp",
-        "thread": "cpp",
-        "cinttypes": "cpp",
-        "typeindex": "cpp",
-        "typeinfo": "cpp",
-        "valarray": "cpp",
-        "variant": "cpp"
+        "type_traits": "cpp"
     },
-    "C_Cpp.errorSquiggles": "disabled",
+
+    // ==================== 代码补全增强 ====================
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.parameterHints.enabled": true,
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "on",
+
+    // ==================== 其他配置 ====================
+    "DockerRun.DisableDockerrc": true
 }
