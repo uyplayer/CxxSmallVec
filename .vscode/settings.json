@@ -2,14 +2,15 @@
     // ==================== CMake 配置 ====================
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
     "cmake.buildArgs": [
-        "--parallel"
+        "--parallel",
+        "--",
+        "-fno-diagnostics-color"
     ],
     "cmake.configureOnOpen": true,
     "cmake.autoRestartBuild": true,
     "cmake.configureArgs": [
         "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
     ],
-
     // ==================== C/C++ 配置 ====================
     "C_Cpp.autocomplete": "default", // ✅ 启用智能补全
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools", // ✅ 推荐配置提供程序
@@ -20,7 +21,6 @@
     "C_Cpp.suggestSnippets": true,
     "C_Cpp.parameterHints": true,
     "C_Cpp.workspaceParsingPriority": "medium",
-
     // ==================== 语言配置 ====================
     "[cpp]": {
         "editor.wordBasedSuggestions": "allDocuments"
@@ -28,7 +28,6 @@
     "[c]": {
         "editor.wordBasedSuggestions": "allDocuments"
     },
-
     // ==================== 文件关联 ====================
     "files.associations": {
         "*.py": "python",
@@ -37,7 +36,6 @@
         "stdexcept": "cpp",
         "type_traits": "cpp"
     },
-
     // ==================== 代码补全增强 ====================
     "editor.quickSuggestions": {
         "other": true,
@@ -48,7 +46,6 @@
     "editor.parameterHints.enabled": true,
     "editor.tabCompletion": "on",
     "editor.acceptSuggestionOnEnter": "on",
-
     // ==================== 其他配置 ====================
     "DockerRun.DisableDockerrc": true
 }
