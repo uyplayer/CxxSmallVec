@@ -18,8 +18,9 @@ file(GLOB_RECURSE CXXSMALLVEC_SOURCES
         src/*.cpp
         src/*.cxx
 )
+ 
 
-
+ 
 
 add_library(CxxSmallVec STATIC  
         ${CXXSMALLVEC_HEADERS}
