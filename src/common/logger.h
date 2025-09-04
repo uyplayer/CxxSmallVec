@@ -11,7 +11,7 @@
 #include <spdlog/sinks/stdout_color_sinks.h>
 
 /**
- * @brief 日志初始化
+ * @brief spdlog 日志初始化
  * 
  */
 inline void logger_init() {

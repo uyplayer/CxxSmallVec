@@ -6,23 +6,28 @@
 #include <iomanip>
 #include <utility>
 
-
 #include "common/logger.h"
 
 /**
  * @brief 执行时间计算日记，作用域内有效
  */
-class ExecuteTimer {
+class ExecuteTimer
+{
 public:
-    explicit ExecuteTimer(std::string  name = "")
+    /**
+     * @brief 构造函数
+     *
+     * @param name 执行器名字
+     */
+    explicit ExecuteTimer(std::string name = "")
         : name_(std::move(name)), start_(Clock::now()) {}
 
-    ~ExecuteTimer() {
+    ~ExecuteTimer()
+    {
         const auto end = Clock::now();
         const std::chrono::duration<double> elapsed = end - start_;
 
-
-        LOG_INFO("{} 耗时: {:.6f} 秒", 
+        LOG_INFO("{} 耗时: {:.6f} 秒",
                  (name_.empty() ? "代码块" : name_), elapsed.count());
     }
 
