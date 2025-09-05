@@ -5,18 +5,18 @@
         "--",
         "-fno-diagnostics-color"
     ],
+    "cmake.generator": "Ninja",
+    "cmake.exportCompileCommands": true,
     "cmake.configureOnOpen": true,
     "cmake.autoRestartBuild": true,
     "cmake.configureArgs": [
         "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
     ],
-
     "C_Cpp.intelliSenseEngine": "disabled",
     "C_Cpp.autocomplete": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
-
     "clangd.arguments": [
-        "--compile-commands-dir=${workspaceFolder}/build",
+        "--compile-commands-dir=${workspaceFolder}/build/${buildType}",  
         "--background-index",
         "--pch-storage=memory",
         "--all-scopes-completion",
@@ -26,14 +26,12 @@
         "--fallback-style=llvm"
     ],
     "clangd.path": "/usr/bin/clangd",
-
     "[cpp]": {
         "editor.wordBasedSuggestions": "allDocuments"
     },
     "[c]": {
         "editor.wordBasedSuggestions": "allDocuments"
     },
-
     "files.associations": {
         "*.py": "python",
         "*.cpp": "cpp",
@@ -41,7 +39,6 @@
         "stdexcept": "cpp",
         "type_traits": "cpp"
     },
-
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
@@ -51,6 +48,5 @@
     "editor.parameterHints.enabled": true,
     "editor.tabCompletion": "on",
     "editor.acceptSuggestionOnEnter": "on",
-
     "DockerRun.DisableDockerrc": true
 }
