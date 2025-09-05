@@ -38,12 +38,12 @@ namespace cxxsmallvec
         using alloc_traits = std::allocator_traits<allocator_type>;
 
         // --- 构造 / 析构  
-        small_vector();
-        ~small_vector();
-        small_vector(const small_vector &other);
-        small_vector(small_vector &&other) noexcept;
-        small_vector &operator=(const small_vector &other);
-        small_vector &operator=(small_vector &&other) noexcept;
+        SmalVector();
+        ~SmalVector();
+        SmalVector(const SmalVector &other);
+        SmalVector(SmalVector &&other) noexcept;
+        SmalVector &operator=(const SmalVector &other);
+        SmalVector &operator=(SmalVector &&other) noexcept;
 
         // --- 容量 ---
         size_type size() const noexcept;
