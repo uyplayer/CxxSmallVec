@@ -7,7 +7,7 @@ project(CxxSmallVec
         LANGUAGES CXX C
 )
 
-# CMake 会在 build/ 目录生成 compile_commands.json。
+# CMake 会在 build/ 目录生成 compile_commands.json 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 file(GLOB_RECURSE CXXSMALLVEC_HEADERS
