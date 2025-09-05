@@ -43,7 +43,8 @@
     "files.associations": {
         "*.py": "python",
         "*.cpp": "cpp",
-        "*.h": "cpp"
+        "*.h": "cpp",
+        "bitset": "cpp"
     },
 
     // ==================== 代码补全增强 ====================
