@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <utility>
 
-#include "common/logger.h"
+#include "logger.h"
 
 /**
  * @brief 执行时间计算日记，作用域内有效

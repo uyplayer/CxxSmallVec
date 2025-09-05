@@ -1,31 +1,24 @@
 {
-    // 配置集合，可以为不同的平台（Linux / Windows / Mac）写多套
+    
     "configurations": [
         {
-            // 配置名称，在 VSCode 界面里显示
+      
             "name": "Linux",
 
-            // 头文件搜索路径，IntelliSense 会用到
-            // ${workspaceFolder}/** 表示当前工程目录及其子目录
-            // /home/uyplayer/.conan2/p/**/include 用于包含 Conan 安装的库头文件
+         
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/include**",
                 "/home/uyplayer/.conan2/p/**/include"
             ],
-
-            // 预定义宏，可以在这里加 C/C++ 宏定义，比如 "DEBUG" 或 "USE_LOG"
+ 
             "defines": [],
-
-            // IntelliSense 的模式
-            // 常用值: linux-clang-x64, linux-gcc-x64, macos-clang-x64, windows-msvc-x64
+ 
             "intelliSenseMode": "linux-clang-x64",
 
-            // 指定由哪个扩展来提供编译配置
-            // 这里使用 CMake Tools 插件自动提供 includePath / defines 等信息
+        
             "configurationProvider": "vector-of-bool.cmake-tools"
         }
     ],
 
-    // 配置文件版本号，目前 VSCode C/C++ 插件要求是 4
     "version": 4
 }
