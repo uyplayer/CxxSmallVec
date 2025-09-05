@@ -1,51 +1,64 @@
 {
     // ==================== CMake 配置 ====================
+    // 指定构建目录，${buildType} 会根据 Debug/Release 自动替换
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+
+    // CMake 构建参数
     "cmake.buildArgs": [
-        "--parallel",
-        "--",
-        "-fno-diagnostics-color"
+        "--parallel",              // 并行编译，加快速度
+        "--", "-fno-diagnostics-color" // 禁用彩色诊断，避免日志颜色字符
     ],
+
+    // 打开工程时自动执行 CMake 配置
     "cmake.configureOnOpen": true,
+
+    // 构建失败后是否自动重新构建
     "cmake.autoRestartBuild": true,
+
+    // 配置时附加参数
     "cmake.configureArgs": [
-        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" // 导出 compile_commands.json，便于 IntelliSense
     ],
+
     // ==================== C/C++ 配置 ====================
-    "C_Cpp.autocomplete": "default", // ✅ 启用智能补全
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools", // ✅ 推荐配置提供程序
-    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/${buildType}/compile_commands.json", // ✅ 动态路径
-    "C_Cpp.errorSquiggles": "enabled",
-    "C_Cpp.default.cStandard": "c11",
-    "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.suggestSnippets": true,
-    "C_Cpp.parameterHints": true,
-    "C_Cpp.workspaceParsingPriority": "medium",
+    "C_Cpp.autocomplete": "default", // ✅ 启用默认代码补全
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools", // ✅ 使用 CMake Tools 提供配置（推荐）
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/${buildType}/compile_commands.json", // ✅ 自动找到对应 buildType 的编译数据库
+    "C_Cpp.errorSquiggles": "enabled", // 启用语法错误提示波浪线
+    "C_Cpp.default.cStandard": "c11",   // C 标准
+    "C_Cpp.default.cppStandard": "c++17", // C++ 标准
+    "C_Cpp.suggestSnippets": true,      // 在补全时建议代码片段
+    "C_Cpp.parameterHints": true,       // 启用函数参数提示
+    "C_Cpp.workspaceParsingPriority": "medium", // IntelliSense 工作区解析优先级
+
     // ==================== 语言配置 ====================
     "[cpp]": {
-        "editor.wordBasedSuggestions": "allDocuments"
+        "editor.wordBasedSuggestions": "allDocuments" // C++ 文件启用跨文档词语建议
     },
     "[c]": {
-        "editor.wordBasedSuggestions": "allDocuments"
+        "editor.wordBasedSuggestions": "allDocuments" // C 文件启用跨文档词语建议
     },
+
     // ==================== 文件关联 ====================
     "files.associations": {
-        "*.py": "python",
-        "*.cpp": "cpp",
-        "*.h": "cpp",
+        "*.py": "python",  // .py 文件识别为 Python
+        "*.cpp": "cpp",    // .cpp 文件识别为 C++
+        "*.h": "cpp",      // .h 文件识别为 C++（而不是 C）
         "stdexcept": "cpp",
         "type_traits": "cpp"
     },
+
     // ==================== 代码补全增强 ====================
     "editor.quickSuggestions": {
-        "other": true,
-        "comments": false,
-        "strings": true
+        "other": true,     // 其他位置开启补全
+        "comments": false, // 注释中不补全
+        "strings": true    // 字符串内启用补全
     },
-    "editor.suggestOnTriggerCharacters": true,
-    "editor.parameterHints.enabled": true,
-    "editor.tabCompletion": "on",
-    "editor.acceptSuggestionOnEnter": "on",
+    "editor.suggestOnTriggerCharacters": true, // 输入触发字符（如 "." 或 "->"）时自动弹出提示
+    "editor.parameterHints.enabled": true,     // 启用参数提示
+    "editor.tabCompletion": "on",              // Tab 键可直接接受建议
+    "editor.acceptSuggestionOnEnter": "on",    // Enter 键可直接接受建议
+
     // ==================== 其他配置 ====================
-    "DockerRun.DisableDockerrc": true
+    "DockerRun.DisableDockerrc": true // 禁用 .dockerrc 文件，避免影响 Docker 扩展
 }

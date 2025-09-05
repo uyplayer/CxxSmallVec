@@ -1,19 +1,47 @@
- {
+{
+    // 调试配置文件的版本号，VSCode 固定写法
     "version": "0.2.0",
+
+    // 调试配置集合，可以定义多个调试方式（如 Debug、Release、Attach）
     "configurations": [
         {
+            // 配置的名字，会显示在 VSCode 的调试下拉菜单里
             "name": "Debug with CMake",
+
+            // 调试器类型，这里使用 C++ 调试扩展 (cpptools)
             "type": "cppdbg",
+
+            // 调试请求类型
+            // - "launch": 启动一个新的进程并调试
+            // - "attach": 附加到已运行的进程
             "request": "launch",
+
+            // 要运行的可执行文件路径
+            // 这里通过 CMake Tools 插件提供的变量自动获取构建产物
             "program": "${command:cmake.launchTargetPath}",
+
+            // 启动程序时传入的命令行参数，这里为空数组
             "args": [],
+
+            // 是否在程序入口（main 函数）处停下来
             "stopAtEntry": false,
+
+            // 设置工作目录，通常是工程根目录
             "cwd": "${workspaceFolder}",
+
+            // 使用的调试器模式，这里是 gdb
             "MIMode": "gdb",
+
+            // 在调试器启动时自动执行的命令
             "setupCommands": [
                 {
+                    // 描述信息，仅用于说明
                     "description": "Enable pretty-printing for gdb",
+
+                    // 具体的 gdb 指令：启用 STL 容器的美化输出
                     "text": "-enable-pretty-printing",
+
+                    // 如果某些 gdb 版本不支持此命令，忽略失败
                     "ignoreFailures": true
                 }
             ]
