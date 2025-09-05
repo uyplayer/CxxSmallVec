@@ -44,7 +44,15 @@
         "*.py": "python",
         "*.cpp": "cpp",
         "*.h": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "memory_resource": "cpp",
+        "sstream": "cpp"
     },
 
     // ==================== 代码补全增强 ====================
@@ -59,5 +67,6 @@
     "editor.acceptSuggestionOnEnter": "on",    // Enter 键可直接接受建议
 
     // ==================== 其他配置 ====================
-    "DockerRun.DisableDockerrc": true // 禁用 .dockerrc 文件，避免影响 Docker 扩展
+    "DockerRun.DisableDockerrc": true,
+    "DockerRun.DisableAutoGenerateConfig": true // 禁用 .dockerrc 文件，避免影响 Docker 扩展
 }

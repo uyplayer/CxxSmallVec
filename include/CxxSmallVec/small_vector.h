@@ -37,6 +37,8 @@ namespace cxxsmallvec
         using allocator_type = Alloc;        ///< 分配器类型
         using alloc_traits = std::allocator_traits<allocator_type>; ///< 分配器 traits
 
+  
+
         // --- 构造 / 析构 ---
         /**
          * @brief 默认构造函数，初始化为空容器
