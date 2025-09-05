@@ -1,8 +1,8 @@
 {
-    // 调试配置文件的版本号，VSCode 固定写法
+    
     "version": "0.2.0",
 
-    // 调试配置集合，可以定义多个调试方式（如 Debug、Release、Attach）
+    
     "configurations": [
         {
             // 配置的名字，会显示在 VSCode 的调试下拉菜单里

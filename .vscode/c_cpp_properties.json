@@ -1,24 +1,15 @@
 {
-    
-    "configurations": [
-        {
-      
-            "name": "Linux",
-
-         
-            "includePath": [
-                "${workspaceFolder}/include**",
-                "/home/uyplayer/.conan2/p/**/include"
-            ],
- 
-            "defines": [],
- 
-            "intelliSenseMode": "linux-clang-x64",
-
-        
-            "configurationProvider": "vector-of-bool.cmake-tools"
-        }
-    ],
-
-    "version": 4
+  "configurations": [
+    {
+      "name": "Linux",
+      "compileCommands": "${workspaceFolder}/build/${buildType}/compile_commands.json",
+      "configurationProvider": "ms-vscode.cmake-tools",
+      "includePath": [
+        "${workspaceFolder}/include**",
+        "${userHome}/.conan2/p/**/include"
+      ],
+      "defines": []
+    }
+  ],
+  "version": 4
 }
