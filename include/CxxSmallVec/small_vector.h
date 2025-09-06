@@ -247,6 +247,38 @@ class SmallVector
         size_type _capacity = N; ///< 当前容量
         T *_data = nullptr;      ///< 堆上数据指针（栈上时为 nullptr）
         allocator_type _alloc{}; ///< 分配器实例
+
+        std::array<std::aligned_storage_t<sizeof(T), alignof(T)>, N> _stack_storage;
+
+        /**
+         * @brief 获取栈上数据指针
+         * @return 栈上数据指针
+         */
+        auto _stack_ptr() noexcept -> T *
+        {
+                return std::launder(static_cast<T *>(static_cast<void *>(_stack_storage.data())));
+        }
+
+        /**
+         * @brief 获取栈上数据常量指针
+         * @return 栈上数据常量指针
+         */
+        auto _stack_ptr() const noexcept -> const T *
+        {
+                return std::launder(
+                        static_cast<const T *>(static_cast<const void *>(_stack_storage.data())));
+        }
+
+        /**
+         * @brief 判断是否在栈上
+         *
+         * @return true 栈
+         * @return false 堆上
+         */
+        [[nodiscard]] auto using_stack() const noexcept -> bool
+        {
+                return _data == nullptr;
+        }
 };
 
 } // namespace cxxsmallvec
