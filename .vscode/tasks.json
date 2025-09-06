@@ -1,47 +1,61 @@
 {
-  // 任务配置文件版本号（固定写法）
   "version": "2.0.0",
-
-  // 定义多个任务
   "tasks": [
     {
-      // 任务名字，会显示在 VS Code 的任务列表中
-      "label": "Conan Install",
-
-      // 执行类型：shell 命令
+      "label": "Conan Install (Debug)",
       "type": "shell",
-
-      // 执行的命令，这里调用 conan（从当前 conda 环境路径取 conan 可执行文件）
       "command": "${env:CONDA_PREFIX}/bin/conan",
-
-      // 命令参数
       "args": [
-        "install",           // 执行 conan install
-        ".",                 // 当前目录
-        "--build=missing",   // 如果缺少依赖则自动构建
-        "-s", "build_type=Debug" // 指定构建类型为 Debug
-      ],
-
-      // 问题匹配器，用来高亮错误，这里没有配置
-      "problemMatcher": []
-    },
-    {
-      "label": "CMake Configure",
-      "type": "shell",
-      "command": "cmake",
-      "args": [
-        "--preset", "conan-debug",  // 使用 CMake 预设（在 CMakePresets.json 里定义）
-        "-DPython_EXECUTABLE=${env:CONDA_PREFIX}/bin/python" // 指定 Python 可执行路径
+        "install", ".", "--build=missing",
+        "-s", "build_type=Debug"
       ],
       "problemMatcher": []
     },
     {
-      "label": "CMake Build Install",
+      "label": "Conan Install (Release)",
+      "type": "shell",
+      "command": "${env:CONDA_PREFIX}/bin/conan",
+      "args": [
+        "install", ".", "--build=missing",
+        "-s", "build_type=Release"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake Configure (Debug)",
       "type": "shell",
       "command": "cmake",
       "args": [
-        "--build", "--preset", "conan-debug", // 构建 conan-debug 预设
-        // "--target", "install" // 如果需要安装目标，取消注释即可
+        "--preset", "conan-debug",
+        "-DPython_EXECUTABLE=${env:CONDA_PREFIX}/bin/python"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake Configure (Release)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset", "conan-release",
+        "-DPython_EXECUTABLE=${env:CONDA_PREFIX}/bin/python"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake Build (Debug)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build", "--preset", "conan-debug"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake Build (Release)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build", "--preset", "conan-release"
       ],
       "problemMatcher": []
     }

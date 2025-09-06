@@ -1,0 +1,34 @@
+# .clangd 配置 (clangd 16)
+CompileFlags:
+  # 使用 CMake 生成的 compile_commands.json，保证补全和真实编译一致
+  CompilationDatabase: build/Debug
+  Add: [-Wall, -Wextra, -Wpedantic]
+
+Diagnostics:
+  ClangTidy:
+    Add:
+      - bugprone-* # 潜在 bug
+      - modernize-* # 现代 C++ 建议
+      - performance-* # 性能优化
+      - readability-* # 可读性提升
+      - cppcoreguidelines-* # C++ Core Guidelines
+    Remove:
+      - clang-analyzer-* # 关掉过度静态分析
+    CheckOptions:
+      readability-identifier-naming.VariableCase: lower_case
+
+Index:
+  Background: Build # 后台索引整个工程
+  StandardLibrary: Yes # 索引标准库（std::vector 等）
+
+Completion:
+  AllScopes: true
+
+InlayHints:
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+  Designators: true
+
+Hover:
+  ShowAKA: true
