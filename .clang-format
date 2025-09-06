@@ -33,3 +33,4 @@ CommentPragmas: "^ IWYU pragma:" # 保留特殊注释
 
 # 短函数规则
 AllowShortFunctionsOnASingleLine: Empty # 只允许空函数写成 {}
+
