@@ -1,0 +1,35 @@
+BasedOnStyle: LLVM
+
+# 缩进相关
+IndentWidth: 8 # 每层缩进 8 个空格
+ContinuationIndentWidth: 8 # 参数换行缩进宽度
+UseTab: Never # 禁用 Tab
+TabWidth: 4 # 如果用 Tab，宽度视为 4 空格
+
+# 大括号风格
+BreakBeforeBraces: Allman # 每个大括号独占一行 (Allman 风格)
+# 可选：Attach (K&R/LLVM 风格)，Linux，Stroustrup，GNU，WebKit
+
+# 空格规则
+SpaceAfterControlStatementKeyword: true # if/for 后加空格: if (true)
+SpaceBeforeParens: ControlStatements # 仅控制语句加空格: if (...)
+SpacesInParentheses: false # 括号内部不加空格: (a+b)
+SpacesInSquareBrackets: false # 数组下标不加空格: v[0]
+SpaceBeforeSquareBrackets: false # 不在 [] 前加空格
+
+# 模板参数
+AlwaysBreakTemplateDeclarations: Yes # 强制模板参数多行展开
+
+# 函数参数
+BinPackParameters: false # 函数参数太多时逐行放置
+BinPackArguments: false # 调用参数太多时逐行放置
+
+# 列宽
+ColumnLimit: 100 # 超过 100 列自动换行 (0 = 不限制)
+
+# 注释
+ReflowComments: true # 自动重排注释
+CommentPragmas: "^ IWYU pragma:" # 保留特殊注释
+
+# 短函数规则
+AllowShortFunctionsOnASingleLine: Empty # 只允许空函数写成 {}
