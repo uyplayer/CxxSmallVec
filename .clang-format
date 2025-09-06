@@ -1,8 +1,8 @@
 BasedOnStyle: LLVM
 
 # 缩进相关
-IndentWidth: 8 # 每层缩进 8 个空格
-ContinuationIndentWidth: 8 # 参数换行缩进宽度
+IndentWidth: 4 # 每层缩进 8 个空格
+ContinuationIndentWidth: 4 # 参数换行缩进宽度
 UseTab: Never # 禁用 Tab
 TabWidth: 4 # 如果用 Tab，宽度视为 4 空格
 
